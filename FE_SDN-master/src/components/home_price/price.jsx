@@ -186,7 +186,7 @@ const Price = () => {
     const calculatePrice = (weight, length, width, height) => {
         const weightCoefficient = 6.5;
         const dimensionCoefficient = 2;
-        return (weight * weightCoefficient) + (length + width + height) * dimensionCoefficient; 
+        return (weight * weightCoefficient) + (length + width + height) * dimensionCoefficient;
     };
 
     const handleCalculatePrice = () => {
@@ -419,7 +419,7 @@ const Price = () => {
                                         placeholder="kg"
                                         className="form-control wrapped-input--input"
                                         value={weight}
-                                        onChange={(e) => setWeight(e.target.value)}
+                                        onChange={(e) => setWeight(parseFloat(e.target.value))}
                                     />
                                 </div>
                             </div>
@@ -435,7 +435,7 @@ const Price = () => {
                                                 placeholder="cm"
                                                 className="form-control wrapped-input--input"
                                                 value={length}
-                                                onChange={(e) => setLength(e.target.value)}
+                                                onChange={(e) => setLength(parseFloat(e.target.value))}
                                             />
                                         </div>
                                     </div>
@@ -451,7 +451,7 @@ const Price = () => {
                                                 placeholder="cm"
                                                 className="form-control wrapped-input--input"
                                                 value={width}
-                                                onChange={(e) => setWidth(e.target.value)}
+                                                onChange={(e) => setWidth(parseFloat(e.target.value))}
                                             />
                                         </div>
                                     </div>
@@ -467,7 +467,7 @@ const Price = () => {
                                                 placeholder="cm"
                                                 className="form-control wrapped-input--input"
                                                 value={height}
-                                                onChange={(e) => setHeight(e.target.value)}
+                                                onChange={(e) => setHeight(parseFloat(e.target.value))}
                                             />
                                         </div>
                                     </div>
@@ -480,11 +480,11 @@ const Price = () => {
                                     className="btn btn-secondary text-bold text-uppercase py-3 w-100"
                                     onClick={handleCalculatePrice}
                                 >
-                                    ƯỚC TÍNH GIÁ (AUD)
+                                    Ước Tính Giá (AUD)
                                 </button>
                             </div>
                             <div className="form-group">
-                                <label className="text-bold">Giá ước tính </label>
+                                <label className="text-bold">Giá Ước Tính</label>
                                 <div className="w-100 wrapped-input">
                                     <input
                                         type="text"
@@ -495,6 +495,7 @@ const Price = () => {
                                     />
                                 </div>
                             </div>
+
                         </form>
                     </Col>
                 </Row>
