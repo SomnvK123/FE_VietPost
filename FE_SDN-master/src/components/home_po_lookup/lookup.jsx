@@ -53,32 +53,30 @@ const Placeholder = styled.div`
 `;
 
 const IndicatorSeparator = styled.span`
-align-self: stretch;
-background-color: hsl(0, 0%, 80%);
-margin-bottom: 8px;
-margin-top: 8px;
-width: 1px;
-box-sizing: border-box;
+  background-color: hsl(0, 0%, 80%);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
 `;
 
 const IndicatorContainer = styled.div`
-    color: hsl(0, 0%, 80%);
-    display: flex;
-    padding: 8px;
-    transition: color 150ms;
-    box-sizing: border-box;
+  color: hsl(0, 0%, 80%);
+  display: flex;
+  padding: 8px;
+  transition: color 150ms;
 
-    &:hover {
-        color: hsl(0, 0%, 60%);
-    }
+  &:hover {
+    color: hsl(0, 0%, 60%);
+  }
 `;
 
 const IndicatorSvg = styled.svg`
-    display: inline-block;
-    fill: currentColor;
-    line-height: 1;
-    stroke: currentColor;
-    stroke-width: 0;
+  display: inline-block;
+  fill: currentColor;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 0;
 `;
 
 const Containerx = styled.div`
@@ -151,6 +149,35 @@ const IndicatorSeparatorr = styled.span`
     box-sizing: border-box;
 `;
 
+//style select
+const StyledSelect = styled.select`
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* Hide the default arrow */
+
+  /* Hide the default arrow in IE */
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover {
+    border-color: #aaa;
+  }
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+`;
+
 const provinces = [
     { id: 1, name: 'Hà Nội' },
     { id: 2, name: 'Hồ Chí Minh' },
@@ -210,40 +237,34 @@ const Lookup = () => {
                                                 <Placeholder>Chọn Bang/Lãnh thổ</Placeholder> // Placeholder cho Bang/Lãnh thổ
                                             )}
                                             <div style={{ position: 'relative', cursor: 'pointer', width: '100%' }}>
-                                                <select
+                                                <StyledSelect
                                                     id="react-select-province-input"
                                                     value={selectedProvince}
                                                     onChange={handleProvinceChange}
                                                     onClick={toggleDropdown}
                                                     onBlur={() => setShowDropdown(false)}
-                                                    style={{
-                                                        boxSizing: 'content-box',
-                                                        width: '100%', // Chiều rộng đầy đủ
-                                                        background: 'none',
-                                                        border: '0',
-                                                        fontSize: 'inherit',
-                                                        opacity: '1',
-                                                        outline: 'none',
-                                                        padding: '0',
-                                                        color: 'inherit',
-                                                        overflowY: 'auto',
-                                                        appearance: 'none',
-                                                    }}
                                                 >
                                                     {selectedProvince ? null : <option value="" style={{ width: '100%' }}></option>}
                                                     {provinces.map((province) => (
                                                         <option key={province.id} value={province.name}>{province.name}</option>
                                                     ))}
-                                                </select>
-                                                <IndicatorSvg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
-                                                    <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
-                                                </IndicatorSvg>
+                                                </StyledSelect>
+                                                <IndicatorSeparator />
+                                                <IndicatorContainer aria-hidden="true">
+                                                    <IndicatorSvg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
+                                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z" />
+                                                    </IndicatorSvg>
+                                                </IndicatorContainer>
                                             </div>
                                         </div>
                                     </Control>
-                                    <IndicatorSeparator></IndicatorSeparator>
-                                    <IndicatorContainer></IndicatorContainer>
                                 </Containerr>
+                                {/* <IndicatorSeparator />
+                                <IndicatorContainer aria-hidden="true">      
+                                    <IndicatorSvg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
+                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z" />
+                                    </IndicatorSvg>
+                                </IndicatorContainer> */}
                             </Form.Group>
                             <Form.Group>
                                 <label>Vùng đô thị</label>
