@@ -249,22 +249,16 @@ const Lookup = () => {
                                                         <option key={province.id} value={province.name}>{province.name}</option>
                                                     ))}
                                                 </StyledSelect>
-                                                <IndicatorSeparator />
-                                                <IndicatorContainer aria-hidden="true">
-                                                    <IndicatorSvg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
-                                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z" />
-                                                    </IndicatorSvg>
-                                                </IndicatorContainer>
                                             </div>
                                         </div>
                                     </Control>
                                 </Containerr>
-                                {/* <IndicatorSeparator />
-                                <IndicatorContainer aria-hidden="true">      
+                                <IndicatorSeparator />
+                                <IndicatorContainer aria-hidden="true">
                                     <IndicatorSvg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
                                         <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z" />
                                     </IndicatorSvg>
-                                </IndicatorContainer> */}
+                                </IndicatorContainer>
                             </Form.Group>
                             <Form.Group>
                                 <label>Vùng đô thị</label>
