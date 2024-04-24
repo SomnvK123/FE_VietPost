@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 // import './Carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from 'react-slick';
